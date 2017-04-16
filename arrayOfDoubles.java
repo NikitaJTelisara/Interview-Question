@@ -106,12 +106,9 @@ public class arrayOfDoubles {
     /* 2. Given an int[] multiply all numbers except index I/p {1,2,3,4} O/P [24, 12, 4, 1]  */
     public static int[] arrayOfMultiples(int[] inputArr) {
         int[] map = new int[inputArr.length];
-        int count = inputArr.length - 1;
-        map[count] = 1;
-        count--;
-        while (count >= 0) {
-            map[count] = inputArr[count + 1] * map[count + 1];
-            count--;
+        map[inputArr.length-1] = 1;
+        for(int i=inputArr.length-2; i>=0;i--){
+            map[i] = inputArr[i+1] * map[i+1];
         }
         return map;
     }
