@@ -103,7 +103,7 @@ public class arrayOfDoubles {
         return res;
     }
 
-    /* 2. Given an int[] multiply all numbers except index I/p {1,2,3,4} O/P {24,12,8,6}  */
+    /* 2. Given an int[] multiply all numbers except index I/p {1,2,3,4} O/P [24, 12, 4, 1]  */
     public static int[] arrayOfMultiples(int[] inputArr) {
         int[] map = new int[inputArr.length];
         int count = inputArr.length - 1;
