@@ -80,6 +80,26 @@ public class arrayOfDoubles {
         }
         return arr;
     }
+    
+    /* better
+    public static void moveZero(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int j = i;
+            if (arr[i] == 0) {
+                while (arr[i] != 1 && i < arr.length-1) {
+                    i++;
+                }
+                swap(arr, i, j);
+                i = j++;
+            }
+        }
+    } 
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    } 
+    */
 
     /* Move all zeros to start input  */
     /* bad solution */
