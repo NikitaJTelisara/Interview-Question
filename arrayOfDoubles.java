@@ -122,6 +122,27 @@ public class arrayOfDoubles {
 
         return res;
     }
+    
+    /* better
+    
+    public static void moveZero(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int j = i;
+            if (arr[i] == 1) {
+                while (arr[i] != 0 && i < arr.length-1) {
+                    i++;
+                }
+                swap(arr, i, j);
+                i = j++;
+            }
+        }
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }*/
 
     /* 2. Given an int[] multiply all numbers except index I/p {1,2,3,4} O/P [24, 12, 4, 1]  */
     public static int[] arrayOfMultiples(int[] inputArr) {
