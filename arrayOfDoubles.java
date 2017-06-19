@@ -86,14 +86,13 @@ public class arrayOfDoubles {
         for (int i = 0; i < arr.length; i++) {
             int j = i;
             if (arr[i] == 0) {
-                while (arr[i] != 1 && i < arr.length-1) {
-                    i++;
+                while (arr[j] != 1 && j < arr.length-1) {
+                    j++;
                 }
                 swap(arr, i, j);
-                i = j++;
             }
         }
-    } 
+    }
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
@@ -129,11 +128,10 @@ public class arrayOfDoubles {
         for (int i = 0; i < arr.length; i++) {
             int j = i;
             if (arr[i] == 1) {
-                while (arr[i] != 0 && i < arr.length-1) {
-                    i++;
+                while (arr[j] != 0 && j < arr.length-1) {
+                    j++;
                 }
                 swap(arr, i, j);
-                i = j++;
             }
         }
     }
