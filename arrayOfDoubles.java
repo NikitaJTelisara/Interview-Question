@@ -90,7 +90,7 @@ public class arrayOfDoubles {
         return count;
     }
 
-    /* get count of pairs whose sum is > sum for unsorted array*/
+    /* get count of pairs whose sum is = sum for unsorted array*/
     public static int getCountBetter(double sum, double[] arr) {
         int count = 0;
         for (int i = 0; i < arr.length - 1; i++) {
