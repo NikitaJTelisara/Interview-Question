@@ -37,43 +37,43 @@ public class arrayOfDoubles {
 
     /* get count of pairs whose sum is > sum for unsorted array*/
     /* best solution
-    public static int getCount(double sum, double[] arr) {
+     public static int getCount(double sum, double[] arr) {
         // get all numbers smaller < sum numbers on front side of the array
         int i = 0;
-        int j = arr.length-1;
-        while (i <= j) {
-            while (arr[i] < sum) {
+        int count = 0;
+        int j = arr.length - 1;
+        while (i < j) {
+            while (arr[i] < sum && i < arr.length - 1) {
                 i++;
             }
-            while (arr[j] > sum) {
+            while (arr[j] > sum && j > 0) {
                 j--;
             }
-            if (i <=j) {
+            if (i < j) {
                 double temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
                 i++;
                 j--;
             }
-        }
+        }       
         // sort all the number <= sum which are in the front side of the array
-        doQuickSort(arr,0,j);
+        doQuickSort(arr, 0, j);          
         // get all the pairs from a[0] to a[j] that make the sum
-        int k =0;
-        int count = 0;
-        while(k<j) {
-            if(arr[k] + arr[j] > sum) {
-                   j--;
-            }else if(arr[k] + arr[j] == sum) {
+       int k = 0;
+        while (k < j) {
+            if (arr[k] + arr[j] > sum) {
+                j--;
+            } else if (arr[k] + arr[j] == sum) {                     
                 count++;
                 j--;
                 k++;
-            } else if(arr[k] + arr[j] < sum) {
+            } else if (arr[k] + arr[j] < sum) {
                 k++;
             }
         }
         return count;
-    } 
+    }
     */
     public static int getCount(double sum, double[] arr) {
         int count = 0;
