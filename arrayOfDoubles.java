@@ -102,6 +102,42 @@ public class arrayOfDoubles {
         }
         return count;
     }
+    
+     // get count of pairs whose sum == sum for a unsorted array
+   /* public static int getCount(double sum, double[] arr) {
+        HashSet<Double> set = new HashSet<Double>();    // use set as we need to just store one value
+        int result = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(set.contains(sum-arr[i])){  // store diff of each number
+                result++;
+            }else {
+                set.add(arr[i]);   
+            }
+        }
+        return result;
+    }  */
+
+    // get count of pairs whose sum == sum for a sorted array
+   /* public static int getCount1(double sum, double[] arr) {
+        int l =0;
+        int h= arr.length-1;
+        int cnt = 0;
+        while (l<h){
+            double newSum = arr[l] +arr[h];
+            if(newSum > sum){
+                h--;                    
+            }
+            if(newSum < sum){
+                l++;
+                h--;
+            }
+            if(newSum == sum){
+               cnt++; 
+            }
+        }
+        return cnt;
+    }  */
+
 
     /* Exp Ques
     1.Move all zeros to end input  */
