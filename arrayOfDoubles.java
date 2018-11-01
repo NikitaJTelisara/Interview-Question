@@ -146,30 +146,20 @@ public class arrayOfDoubles {
 
     /* Exp Ques
     1.Move all zeros to end input  */
-    public static int[] moveZeroToEnd(int[] arr) {
-        int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                arr[count] = arr[i];
-                count++;
-            }
-        }
-        while (count < arr.length) {
-            arr[count] = 0;
-            count++;
-        }
-        return arr;
-    }
-    
-    /* better
     public static void moveZero(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            int j = i;
-            if (arr[i] == 0) {
-                while (arr[j] != 1 && j < arr.length-1) {
-                    j++;
-                }
-                swap(arr, i, j);
+        int i = 0;
+        int j = arr.length - 1;
+        while (i < j) {
+            while (arr[i] == 1) {
+                i++;
+            }
+            while (arr[j] == 0) {
+                j--;
+            }
+            if(i<j){
+                swap(arr,i,j);
+                i++;
+                j--;
             }
         }
     }
@@ -180,47 +170,24 @@ public class arrayOfDoubles {
     } 
     */
 
-    /* Move all zeros to start input  */
-    /* bad solution */
-    public static int[] moveZeroToStart(int[] arr) {
-        int count = 0;
-        int[] res = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                res[count] = 0;
-                count++;
+    /* Move all zeros to start input  */ 
+     public static void moveZeroToStart(int[] arr) {
+        int i = 0;
+        int j = arr.length - 1;
+        while (i < j) {
+            while (arr[i] == 0) {
+                i++;
             }
-        }
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                res[count] = arr[i];
-                count++;
+            while (arr[j] == 1) {
+                j--;
             }
-        }
-
-        return res;
-    }
-    
-    /* better
-    
-    public static void moveZero(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            int j = i;
-            if (arr[i] == 1) {
-                while (arr[j] != 0 && j < arr.length-1) {
-                    j++;
-                }
-                swap(arr, i, j);
+            if(i<j){
+                swap(arr,i,j);
+                i++;
+                j--;
             }
         }
     }
-
-    public static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }*/
 
     /* 2. Given an int[] multiply all numbers except index I/p {1,2,3,4} O/P [24, 12, 4, 1]  */
     public static int[] arrayOfMultiples(int[] inputArr) {
