@@ -209,9 +209,10 @@ public class arrayOfDoubles {
         return count;
     }
 
-    public static boolean isPrime(int n) {
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) {
+   public static boolean isPrime(int num){
+        for(int i=2; i<=num/2;i++){    // u check till half number ex num = 13 u check till 13 % 6 (u dont want to check (13 % 7) as 7*2=14 is greater than
+        // 13 
+            if(num%i == 0){
                 return false;
             }
         }
