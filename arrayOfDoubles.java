@@ -35,8 +35,8 @@ public class arrayOfDoubles {
         }
     }
 
-    /* get count of pairs whose sum is > sum for unsorted array*/
-    /* best solution
+    /* get count of pairs whose sum is = sum for unsorted array*/
+    /*  solution if u dont want to use a additional datastructure
      public static int getCount(double sum, double[] arr) {
         // get all numbers smaller < sum numbers on front side of the array
         int i = 0;
@@ -73,8 +73,46 @@ public class arrayOfDoubles {
             }
         }
         return count;
-    }
+    }*/
+    
+     // get count of pairs whose sum == sum for a unsorted array , use additional datastructure
+   /* public static int getCount(double sum, double[] arr) {
+        HashSet<Double> set = new HashSet<Double>();    // use set as we need to just store one value
+        int result = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(set.contains(sum-arr[i])){  // store diff of each number
+                result++;
+            }else {
+                set.add(arr[i]);   
+            }
+        }
+        return result;
+    }  */
+
+    // get count of pairs whose sum == sum for a sorted array 
+   /* public static int getCount1(double sum, double[] arr) {
+        int l =0;
+        int h= arr.length-1;
+        int cnt = 0;
+        while (l<h){
+            double newSum = arr[l] +arr[h];
+            if(newSum > sum){
+                h--;                    
+            }
+            if(newSum < sum){
+                l++;
+                h--;
+            }
+            if(newSum == sum){
+               cnt++; 
+            }
+        }
+        return cnt;
+    }  */
+    
+    
     */
+    // get count of pairs whose sum is > sum for unsorted array*/
     public static int getCount(double sum, double[] arr) {
         int count = 0;
         for (int i = 0; i <= arr.length - 1; i++) {
@@ -103,40 +141,7 @@ public class arrayOfDoubles {
         return count;
     }
     
-     // get count of pairs whose sum == sum for a unsorted array
-   /* public static int getCount(double sum, double[] arr) {
-        HashSet<Double> set = new HashSet<Double>();    // use set as we need to just store one value
-        int result = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if(set.contains(sum-arr[i])){  // store diff of each number
-                result++;
-            }else {
-                set.add(arr[i]);   
-            }
-        }
-        return result;
-    }  */
-
-    // get count of pairs whose sum == sum for a sorted array
-   /* public static int getCount1(double sum, double[] arr) {
-        int l =0;
-        int h= arr.length-1;
-        int cnt = 0;
-        while (l<h){
-            double newSum = arr[l] +arr[h];
-            if(newSum > sum){
-                h--;                    
-            }
-            if(newSum < sum){
-                l++;
-                h--;
-            }
-            if(newSum == sum){
-               cnt++; 
-            }
-        }
-        return cnt;
-    }  */
+    
 
 
     /* Exp Ques
