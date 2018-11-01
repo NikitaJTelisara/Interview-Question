@@ -36,7 +36,7 @@ public class arrayOfDoubles {
     }
 
     /* get count of pairs whose sum is = sum for unsorted array*/
-    /*  solution if u dont want to use a additional datastructure
+    /*  solution if u dont want to use a additional datastructure 
      public static int getCount(double sum, double[] arr) {
         // get all numbers smaller < sum numbers on front side of the array
         int i = 0;
@@ -75,7 +75,7 @@ public class arrayOfDoubles {
         return count;
     }*/
     
-     // get count of pairs whose sum == sum for a unsorted array , use additional datastructure
+     // get count of pairs whose sum == sum for a unsorted array , use additional datastructure, its its n times O(1)
    /* public static int getCount(double sum, double[] arr) {
         HashSet<Double> set = new HashSet<Double>();    // use set as we need to just store one value
         int result = 0;
